@@ -1,5 +1,5 @@
 {
-  "name": "angular-workspace",
+  "name": "@test/app2",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,11 +7,25 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "scripts": "ng-packagr -p package.json"
+  },
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts"
+    },
+    "whitelistedNonPeerDependencies": [
+      "angular",
+      "core-js",
+      "ng-packagr",
+      "rxjs",
+      "tslib",
+      "zone.js"
+    ]
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.2.0",
+    "@angular/animations": "^7.2.15",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
     "@angular/core": "~7.2.0",
@@ -20,6 +34,7 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "core-js": "^2.5.4",
+    "ng-packagr": "^5.2.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
@@ -40,7 +55,6 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^5.2.0",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
