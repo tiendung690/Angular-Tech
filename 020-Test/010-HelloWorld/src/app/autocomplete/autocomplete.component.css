@@ -1,0 +1,8 @@
+
+.dropdownvalue{
+    color: black
+}
+
+.dropdownvalue[disabled='true']{
+    color: red
+}

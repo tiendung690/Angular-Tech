@@ -1,0 +1,8 @@
+<input [(ngModel)]="selectedValue"/>
+
+<ul>
+  <li *ngFor="let item of itemList" [attr.disabled]="item.disabled" class="dropdownvalue"
+      (click)="selectItem(item)">
+    {{item.desc}}
+  </li>
+</ul>
