@@ -1,0 +1,6 @@
+:host ::ng-deep .description-section{
+    color: grey;
+    font-size: 11px;
+    height: 30px;
+    overflow: auto;
+}

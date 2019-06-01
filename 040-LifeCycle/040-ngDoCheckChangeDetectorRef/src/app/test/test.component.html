@@ -1,0 +1,16 @@
+<div style="border: 1px solid black">
+  <h1>Test Component</h1>
+  <div class="description-section">
+  </div>
+  <div>
+    Name: <span style="color: red">{{name}}</span>
+  </div>
+  <div>
+    Coutner: <span style="color:blue">{{counter}}</span>
+  </div>
+  <div>
+    <div *ngFor="let log of logs">
+      {{log}}
+    </div>
+  </div>
+</div>

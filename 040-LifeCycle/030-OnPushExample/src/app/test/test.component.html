@@ -1,0 +1,17 @@
+<div style="border: 1px solid black">
+  <h1>Test Component</h1>
+  <div>
+    Name: <span style="color: red">{{name}}</span>
+  </div>
+  <div>
+    Coutner: <span style="color:blue">{{counter}}</span>
+  </div>
+  <div>
+    Run Change Detection: {{runChangeDetection}}
+  </div> 
+  <div>
+    <div *ngFor="let log of logs">
+      {{log}}
+    </div>
+  </div>
+</div>

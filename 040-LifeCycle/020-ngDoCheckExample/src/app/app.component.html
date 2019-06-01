@@ -1,0 +1,11 @@
+Welcome to {{ title }}!
+
+<div style="display: flex">
+    <app-test [name]="name"></app-test>
+    <div>
+        <button (click)="changeName()">Change name</button>
+        <button (click)="doSomething()">Do Something</button>        
+    </div>
+</div>
+
+<router-outlet></router-outlet>
