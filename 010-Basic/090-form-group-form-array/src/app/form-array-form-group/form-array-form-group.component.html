@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+  <input formControlName="name"/>
+  
+  <div formArrayName="addresses" *ngFor="let address of form.get('addresses').controls; index as i">
+    <div formGroupName="{{i}}">
+      <input formControlName="address"/>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,14 @@
+<p>
+  template-driven-form works!
+</p>
+<form #form="ngForm">
+  <input [(ngModel)]="model.name" name="name">
+</form>
+
+<div>
+  {{model | json}}
+</div>
+
+<div>
+  {{form.value | json}}
+</div>

@@ -1,0 +1,7 @@
+<form [formGroup]="form">
+  <input formControlName="name" placeholder="name"/>
+  <div formGroupName="address">
+    <input formControlName="address1" placeholder="address.address1"/>
+  </div>
+</form>
+{{ form.value | json}}
