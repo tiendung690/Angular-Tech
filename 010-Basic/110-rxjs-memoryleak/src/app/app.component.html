@@ -1,0 +1,12 @@
+<div>
+  <!-- <app-rxjs-memoryleak *ngIf="isShow"></app-rxjs-memoryleak> -->
+  <app-rxjs-memoryleak-fix-takeutil *ngIf="isShow"></app-rxjs-memoryleak-fix-takeutil>
+</div>
+
+<button (click)="isShow = !isShow">{{isShow?'hide':'show'}}</button>
+
+<div>
+  <div *ngFor="let log of logs">
+    {{log}}
+  </div>
+</div>

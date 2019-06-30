@@ -1,0 +1,6 @@
+<form [formGroup]="form">
+  <input formControlName="name"/>
+  <app-self-register-children1></app-self-register-children1>
+</form>
+
+{{form.value | json}}
