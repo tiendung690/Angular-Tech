@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+  <div>name: <input formControlName="name"/></div>
+</form>
+<div>
+  <button (click)="addControl()">add control</button>
+  <button (click)="patchValue()">patch value</button>
+  <button (click)="setValue()">set value</button>
+</div>
+{{form.value | json}}
