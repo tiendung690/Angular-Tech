@@ -1,4 +1,14 @@
 <form [formGroup]="form">
-    <input formControlName="name"/>
+    <input formControlName="name" [required]="true"/>
 </form>
 
+<div>
+    Valid: {{form.valid}}
+</div>
+
+<div>
+    {{title}}
+</div>
+<div>
+    <button (click)="changeTitle()">changeTitle</button>
+</div>

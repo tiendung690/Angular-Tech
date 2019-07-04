@@ -1,0 +1,13 @@
+<p>
+  {{counter.number}}
+</p>
+<button (click)="update()">update</button>
+<form [formGroup]="form">
+  <input formControlName="name" [required]="true"/>
+</form>
+<div>
+  {{form.value | json}}
+</div>
+<div>
+  valid: {{form.valid }}
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import MotherForm from './mother-form';
 import { FormGroup, FormControl } from '@angular/forms';
 
