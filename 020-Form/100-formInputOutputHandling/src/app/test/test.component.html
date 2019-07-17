@@ -1,0 +1,14 @@
+<div style="border: 1px solid">
+  <div>
+    <b>Child Form</b>
+  </div>
+  <div [formGroup]="form">
+    <div>Name: <input formControlName="name"/></div>
+    <button (click)="onSubmit()">Submmit</button>
+    <button (click)="onReset()">Reset</button>
+  </div>
+  
+  <div>
+    {{form.value | json}}
+  </div>  
+</div>

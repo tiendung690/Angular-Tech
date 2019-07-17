@@ -1,0 +1,13 @@
+<div style="border: 1px solid">
+    <div>
+        <b>Parent Form</b>
+    </div>
+    <app-test [initialValue]="value" (valueChange)="onValueChange($event)"></app-test>
+
+    <div>
+        {{value | json}}
+    </div>
+
+    <button (click)="editChildForm()">Edit Child Form</button>
+
+</div>
