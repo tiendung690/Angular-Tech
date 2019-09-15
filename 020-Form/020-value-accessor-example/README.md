@@ -1,27 +1,73 @@
-# AngularWorkspace
+# Value Accessor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Development server
+**custom-input.component.ts**
+```
+import { Component, OnInit, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+@Component({
+  selector: 'app-custom-input',
+  templateUrl: './custom-input.component.html',
+  styleUrls: ['./custom-input.component.css'],
+  providers: [{       
+    provide: NG_VALUE_ACCESSOR, 
+    useExisting: forwardRef(() => CustomInputComponent),
+    multi: true     
+  }]  
+})
+export class CustomInputComponent implements OnInit, ControlValueAccessor {
+  
+  onChange: (value: any) => void;
+  value: any;
 
-## Code scaffolding
+  constructor() { }
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ngOnInit() {
+  }
+  
+  writeValue(obj: any): void {
+    this.value = obj;
+  }
 
-## Build
+  registerOnChange(fn: (value: any) => void): void {
+    this.onChange = fn;
+  }
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+  registerOnTouched(fn: any): void {
+  }
 
-## Running unit tests
+  callOnChangeTesting(){
+    this.onChange('Testing');
+  }
+}
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
 
-## Running end-to-end tests
+**custom-input.component.html**
+```
+{{value}}
+<button (click)="callOnChangeTesting()">callOnChangeTesting</button>
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+**app.component.ts**
+```
+import { Component } from '@angular/core';
 
-## Further help
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  value:any = 'Initial Value';
+}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```
+
+**app.component.html**
+```
+<app-custom-input [(ngModel)]="value"></app-custom-input>
+
+{{value}}
+```
