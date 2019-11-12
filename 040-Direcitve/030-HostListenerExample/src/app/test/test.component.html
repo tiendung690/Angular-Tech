@@ -1,0 +1,10 @@
+<p>
+  test works!
+</p>
+{{count()}}
+<input [(ngModel)]="outputValue"/>
+<button (click)="action()">action</button>
+
+<div>Output Value: {{outputValue}}</div>
+<button (click)="passOutput()">Pass Output Value to another entry component</button>
+<app-techchild [inputValue]="outputValue"></app-techchild>
